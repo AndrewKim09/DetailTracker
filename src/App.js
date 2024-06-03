@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { Route, Routes } from 'react-router-dom';
+import { LoginPage } from './components/LoginPage';
+import {RegisterPage} from './components/RegisterPage';
+import React from 'react';
+import { MainPage } from './components/MainPage';
+
+export const Context = React.createContext();
 
 function App() {
+  const backendLocation = 'http://localhost:8080/api'
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Context.Provider value = {{backendLocation}}>
+      <div className="App h-[100vh] roboto-regular flex items-center justify-center">
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/main" element={<MainPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+        </Routes>
+      </div>
+    </Context.Provider>
   );
 }
 

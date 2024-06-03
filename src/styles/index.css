@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+  background-image: url('../images/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.thumbs-up {
+  background-image: url('../images/thumbsup.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease-in-out;
+}
+
+@keyframes thumbsUpAnimation {
+  0%, 100% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.5);
+  }
+}
+.thumbs-up.animate {
+  animation: thumbsUpAnimation 0.5s ease-in-out;
+}

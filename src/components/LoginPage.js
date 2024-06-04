@@ -81,7 +81,7 @@ export const LoginPage = () => {
 
           <a className="mt-3 text-sm text-center text-white hover:cursor-pointer" onClick={() => {navigate("/register")}}>Register?</a>
 
-          <button className="flex px-2 py-2 rounded-md mt-6 bg-green-400/90 text-white w-[50%]" onClick={onSubmit}>
+          <button className="flex items-center justify-center px-2 py-2 rounded-md mt-6 bg-green-400/90 text-white w-[50%]" onClick={onSubmit}>
           {!loading ? (
             <div className="flex-1 text-center">Login</div>
           ) : (
